@@ -67,6 +67,7 @@ public class Project {
     }
 
     private void calcLateValues(Activity a){
+        int actlowindex = 0;
         //check if we are at stop
         if (a.getOutput().isEmpty()){
             a.setLateFinish(a.getEarlyFinish());
@@ -77,7 +78,13 @@ public class Project {
             a.setLateStart(a.getEarlyStart());
         }
         else {
-            a.setLateFinish(a.getOutput().get(0).getLateStart());
+            int size = a.getOutput().size();
+            for (int i = 0; i<size; i++){
+                if (a.getOutput().get(i).getLateStart()<a.getOutput().get(actlowindex).getLateStart()){
+                    actlowindex=i;
+                }
+            }
+            a.setLateFinish(a.getOutput().get(actlowindex).getLateStart());
             a.setLateStart(a.getLateFinish() - a.getDuration());
             a.setSlack(a.getLateFinish() - a.getEarlyFinish());
         }

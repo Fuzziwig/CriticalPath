@@ -25,7 +25,7 @@ public class Input {
             } catch (InputMismatchException e) {
                 System.out.println(errmsg);
             } catch (IndexOutOfBoundsException e){
-                System.out.println("Du har indtastet "+e.getMessage()+" karakterer. Der understøttes kun "+maxlen+".");
+                System.out.println("You have entered "+e.getMessage()+" characters. Supported length is "+maxlen+".");
             }
         }
     }

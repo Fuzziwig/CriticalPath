@@ -13,7 +13,7 @@ public class Project1 extends Project{
         Activity e = new Activity("E", 3);
         Activity f = new Activity("F", 5);
         Activity g = new Activity("G", 4);
-        Activity h = new Activity("H", 4);
+        Activity h = new Activity("H", 2);
         Activity i = new Activity("I", 2);
         //Activity connections
         a.connect(b);
